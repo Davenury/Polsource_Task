@@ -26,7 +26,7 @@ def get_and_check_note_params(request):
     return title, content
 
 
-@app.route("/create_note", methods=["POST", "GET"])
+@app.route("/create_note", methods=["POST"])
 def create_note():
     if request.method == "POST":
         try:
@@ -38,7 +38,7 @@ def create_note():
     return "Hellow get"
 
 
-@app.route("/update_note/<note_id>", methods=["GET", "POST"])
+@app.route("/update_note/<note_id>", methods=["POST"])
 def update_note(note_id):
     if request.method == "POST":
         try:
@@ -55,7 +55,7 @@ def update_note(note_id):
     return "Hellow update"
 
 
-@app.route("/delete_note/<note_id>", methods=["GET", "POST"])
+@app.route("/delete_note/<note_id>", methods=["POST"])
 def delete_note(note_id):
     if request.method == "POST":
         try:
