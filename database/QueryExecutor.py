@@ -87,4 +87,7 @@ class QueryExecutor:
     def get_versioned_note_by_id(self, note_id):
         query = 'Select * from Note_version where note_id=?'
         self.cursor.execute(query, (note_id, ))
-        return self.cursor.fetchall()
+        notes = self.cursor.fetchall()
+        if notes is None:
+            raise NoteNotFound("There are no versions of this note!")
+        return notes

@@ -87,6 +87,18 @@ def get_all_notes():
         return "There are no notes", 404
 
 
+@app.route('/get_versions_by_id/<note_id>', methods=["GET"])
+def get_versions_by_id(note_id):
+    try:
+        notes = database.get_versioned_note_by_id(note_id)
+        notes_jsonified = [note.get_json() for note in notes]
+        return {
+            "notes": notes_jsonified
+        }
+    except NoteNotFound:
+        return "There are no versions of this note", 404
+
+
 if __name__ == "__main__":
     database = Database()
     app.run()
