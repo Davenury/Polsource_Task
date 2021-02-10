@@ -22,3 +22,6 @@ class Note:
 
     def title_and_content_equals(self, title, content):
         return self.title == title and self.content == content
+
+    def get_json(self):
+        return self.__dict__

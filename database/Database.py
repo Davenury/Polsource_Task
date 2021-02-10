@@ -3,24 +3,24 @@ from datetime import datetime
 
 from database.Note import Note
 from database.QueryExecutor import QueryExecutor
-from src.definitions import DATABASE_FILE_NAME
+from definitions import DATABASE_FILE_NAME
 
 
 class Database:
     def __init__(self, mode="Prod"):
-        self.conn = self.get_connection(mode)
+        self.conn = self.create_connection(mode)
         self.query_executor = QueryExecutor(self.conn)
         self.query_executor.create_database()
 
     @staticmethod
-    def get_connection(mode):
+    def create_connection(mode="Prod"):
         conn = None
         if mode == "Test":
             path = ":memory:"
         else:
             path = DATABASE_FILE_NAME
         try:
-            conn = sqlite3.connect(path)
+            conn = sqlite3.connect(path, check_same_thread=False)
         except sqlite3.Error as e:
             print(e)
         return conn
@@ -28,7 +28,7 @@ class Database:
     def get_cursor(self):
         return self.conn.cursor()
 
-    def close_conn(self):
+    def close_connection(self):
         if self.conn:
             self.conn.close()
 
