@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body class="bg-dark">
+
+    <div class="container" style="margin-top: 10px;">
+      <h1><span class="badge badge-secondary">Note API</span></h1>
+
+      <table class="table table-dark table-striped">
+        <thead>
+      <tr>
+        <th>Method</th>
+        <th>Endpoint</th>
+        <th>Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="table-success">GET</td>
+        <td>/get_versions_by_id/&lt;note_id&gt;</td>
+        <td>Get versions of note with required id</td>
+      </tr>
+      <tr>
+        <td class="table-success">GET</td>
+        <td>/get_all_notes</td>
+        <td>Get all notes from database that are not deleted</td>
+      </tr>
+      <tr>
+        <td class="table-success">GET</td>
+        <td>/get_note/&lt;note_id&gt;</td>
+        <td>Get note with provided id</td>
+      </tr>
+      <tr>
+        <td class="table-danger">POST</td>
+        <td>/delete_note/&lt;note_id&gt;</td>
+        <td>Delete note with provided id - doesn't delete note versions!</td>
+      </tr>
+      <tr>
+        <td class="table-danger">POST</td>
+        <td>/update_note/&lt;note_id&gt;</td>
+        <td>Updates note with provided id</td>
+      </tr>
+      <tr>
+        <td class="table-danger">POST</td>
+        <td>/create_note</td>
+        <td>Creates note with parameters from request.form</td>
+      </tr>
+      </table>
+
+      <h3><span class="badge badge-secondary">Live demo</span></h3>
+      <span style="color: #fafafa; font-size: 18px;">For live demo, please check out <a href="https://davenury.github.io/NoteIT/" style="text-decoration: none;" target="_blank">this link</a>.</span>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
