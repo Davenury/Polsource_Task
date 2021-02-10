@@ -43,7 +43,7 @@ class QueryExecutor:
         return self.cursor.fetchone()
 
     def get_note_by_id(self, id):
-        query = 'Select * from Notes where ROWID=?'
+        query = 'Select *, ROWID from Notes where ROWID=?'
         self.cursor.execute(query, (id,))
         note = self.cursor.fetchone()
         if note is None:
@@ -51,7 +51,7 @@ class QueryExecutor:
         return note
 
     def get_all_notes(self):
-        query = 'Select * from Notes'
+        query = 'Select *, ROWID from Notes'
         self.cursor.execute(query)
         notes = self.cursor.fetchall()
         if not notes:

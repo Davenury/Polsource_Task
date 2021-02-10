@@ -9,6 +9,7 @@ class Note:
         self.modified = args[3]
         self.version = args[4]
         self.deleted = args[5]
+        self.id = args[6]
 
     def get_created_date(self):
         return self.prepare_date(self.created)

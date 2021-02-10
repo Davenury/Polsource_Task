@@ -19,9 +19,9 @@ def hello_world():
 def get_and_check_note_params(request):
     title = request.form.get("title")
     content = request.form.get("content")
-    if title is None:
+    if title is None or title == "":
         raise WebException("Title of note cannot be empty!", 406)
-    if content is None:
+    if content is None or content == "":
         raise WebException("Content of note cannot be empty!", 406)
     return title, content
 
