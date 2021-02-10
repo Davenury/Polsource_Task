@@ -54,6 +54,3 @@ class Database:
 
     def delete_note_by_id(self, note_id):
         self.query_executor.delete_note(note_id)
-
-    def holy_hand_granade(self):
-        self.query_executor.holy_hand_granade()

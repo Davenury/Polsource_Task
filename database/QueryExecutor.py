@@ -83,7 +83,3 @@ class QueryExecutor:
         update_query = 'Delete from Notes where ROWID = ?'
         self.cursor.execute(update_query, (note_id, ))
         self.connection.commit()
-
-    def holy_hand_granade(self):
-        self.cursor.execute('DROP TABLE Note_version')
-        self.cursor.execute('DROP TABLE Notes')
