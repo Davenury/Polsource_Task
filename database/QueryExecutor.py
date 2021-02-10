@@ -83,3 +83,8 @@ class QueryExecutor:
         update_query = 'Delete from Notes where ROWID = ?'
         self.cursor.execute(update_query, (note_id, ))
         self.connection.commit()
+
+    def get_versioned_note_by_id(self, note_id):
+        query = 'Select * from Note_version where note_id=?'
+        self.cursor.execute(query, (note_id, ))
+        return self.cursor.fetchall()

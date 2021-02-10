@@ -54,4 +54,4 @@ class UpdateNoteTest(TestCase):
         self.assertEqual(result[0], 2)
 
     def tearDown(self):
-        self.database.close_conn()
+        self.database.close_connection()

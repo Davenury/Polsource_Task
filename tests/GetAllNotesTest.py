@@ -31,4 +31,4 @@ class GetAllNotesTest(TestCase):
             self.database.get_all_notes()
 
     def tearDown(self):
-        self.database.close_conn()
+        self.database.close_connection()

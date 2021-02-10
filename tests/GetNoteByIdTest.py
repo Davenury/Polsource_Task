@@ -25,4 +25,4 @@ class GetNoteByIdTest(TestCase):
             self.database.get_note_by_id(2)
 
     def tearDown(self):
-        self.database.close_conn()
+        self.database.close_connection()

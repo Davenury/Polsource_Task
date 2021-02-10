@@ -54,3 +54,8 @@ class Database:
 
     def delete_note_by_id(self, note_id):
         self.query_executor.delete_note(note_id)
+
+    def get_versioned_note_by_id(self, note_id):
+        notes = self.query_executor.get_versioned_note_by_id(note_id)
+        print(notes)
+        return [Note(*note, offset=1) for note in notes]
