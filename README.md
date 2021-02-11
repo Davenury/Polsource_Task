@@ -58,7 +58,9 @@ For more details on UI, go to [this repository](https://github.com/Davenury/Note
 ---
 
 ### Example usages
+
 You can use this project as I've shown in Run Project Demo section (for fun) or in previous sections (for making your own version of this API and NoteIT app).
+
 ---
 
 ### Project Sturcture
